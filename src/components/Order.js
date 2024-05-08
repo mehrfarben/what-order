@@ -1,42 +1,59 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import { MovieOrder } from "../data/WatchOrder"
+import { Link, useParams } from "react-router-dom"
+import { WatchOrder } from "../data/WatchOrder"
+import Fallback from "../assets/fallback.png"
 
 const Order = () => {
   const { id } = useParams()
-  const order = MovieOrder.movies?.order
+  const movie = WatchOrder.movies?.find((movie) => movie.id === id)
+  const order = movie?.order
+  const media = movie?.media ? movie.media : ["movie"]
   const apiKey = process.env.REACT_APP_API_KEY
   const imgUrl = "https://image.tmdb.org/t/p/w154"
   const [data, setData] = useState([])
-  const [poster, setPoster] = useState("")
-  const [title, setTitle] = useState("")
-  const [name, setName] = useState("")
 
   useEffect(() => {
-    MovieOrder.movies.forEach((element) => {
-      if (id === element.id) {
-        element.order.forEach((element) => {
-          fetch(`https://api.themoviedb.org/3/movie/${element}?api_key=${apiKey}`)
-            .then((response) => response.json())
-            .then((data) => {
-              setData((prevData) => [...prevData, data])
+    const fetchData = async () => {
+      if (order) {
+        try {
+          const responses = await Promise.all(
+            order.map(async (element, index) => {
+              const mediaType = media[index] || media[0]
+              const response = await fetch(`https://api.themoviedb.org/3/${mediaType}/${element}?api_key=${apiKey}`)
+              return response.json()
             })
-            .catch((error) => {
-              console.error(error)
-            })
-        })
+          )
+          setData(responses)
+        } catch (error) {
+          console.error(error)
+        }
       }
-    })
-  }, [id, order, apiKey])
+    }
+
+    fetchData()
+  }, [id, order, media, apiKey])
 
   return (
-    <div className='order'>
-      {data.map((item) => (
-        <div className='innerOrder'>
-          <img key={item.id} src={item.poster_path ? imgUrl + item.poster_path : "https://via.placeholder.com/400"} alt={item.title || item.name} />
-          <p>{item.title || item.name}</p>
-        </div>
-      ))}
+    <div className='orderApp'>
+      <h2>what order to watch?</h2>
+
+      <div className='order'>
+        {data.length > 0 ? (
+          data.map((item, index) => (
+            <>
+              <Link to={`/${media[index] || media[0]}/${item.id}`} key={item.id}>
+                <div className='innerOrder'>
+                  <img src={item.poster_path ? imgUrl + item.poster_path : Fallback} alt={item.title || item.name} />
+                  <p>{item.title || item.name}</p>
+                </div>
+              </Link>
+              <p>→</p>
+            </>
+          ))
+        ) : (
+          <h1 className='sorry'>either this is a solo movie/tv show or we currently don't have the watch order for it.</h1>
+        )}
+      </div>
     </div>
   )
 }

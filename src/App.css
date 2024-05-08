@@ -9,9 +9,16 @@ body {
   margin: 0;
   min-height: 100%;
   max-width: 100vw;
+  background-color: #fbfbfd;
 }
 
-body {
+img {
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
 }
 
 .header {
@@ -20,7 +27,7 @@ body {
   height: 55px;
   display: flex;
   justify-content: space-around;
-  padding: 7px 0px;
+  padding: 8px 0px;
   user-select: none;
   z-index: 100;
   background-color: rgba(255, 255, 255, 0.5);
@@ -80,7 +87,7 @@ body {
   flex-direction: column;
   text-align: center;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
 }
 
 .searchTextWrapper {
@@ -183,11 +190,6 @@ body {
   flex-wrap: wrap;
 }
 
-img {
-  box-sizing: border-box;
-  display: inline-block;
-}
-
 .movie {
   width: 250px;
   height: 365px;
@@ -249,7 +251,7 @@ img {
 .movie:hover div:nth-of-type(3) {
   opacity: 1;
   background-color: rgba(29, 29, 31, 0.4);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
 }
 
 .movie:hover div:nth-of-type(1) {
@@ -257,7 +259,7 @@ img {
 }
 
 .background {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .mediaApp {
@@ -265,16 +267,19 @@ img {
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(5px);
   width: 100%;
-  height: 55vh;
+  height: 50vh;
   padding-top: 4rem;
-  padding-left: 10rem;
   display: flex;
 }
 
+.mediaInfo {
+  margin-left: 7%;
+}
+
 .mediaPoster > img {
+  margin-left: 30%;
   border-radius: 15px;
-  height: 450px;
-  width: 300px;
+  height: 92%;
 }
 
 .mediaOverview {
@@ -328,13 +333,22 @@ img {
   background-color: rgba(251, 251, 253, 1);
 }
 
+.orderApp > h2 {
+  color: #212121;
+  font-size: 40px;
+  font-weight: 800;
+  margin-left: 5%;
+  margin-top: 3%;
+  margin-bottom: 1%;
+}
+
 .order {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
+  overflow-x: auto;
   color: #000;
-  max-width: 100%;
+  margin-left: 5%;
+  margin-bottom: 5%;
 }
 
 .innerOrder {
@@ -344,12 +358,26 @@ img {
 }
 
 .innerOrder > img {
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+  height: 231px;
+  width: 154px;
+}
+
+.innerOrder > img:hover {
+  transform: scale(102%);
 }
 
 .innerOrder > p {
+  color: #212121;
   font-size: 15px;
   margin-top: 5px;
+}
+
+.sorry {
+  font-size: 25px;
+  font-weight: 300;
+  color: #40798c;
 }
 
 .footer {

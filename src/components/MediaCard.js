@@ -1,5 +1,6 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import Fallback from "../assets/fallback.png"
 
 const MediaCard = ({ movie: { id, poster_path, title, name, media_type } }) => {
   const imgUrl = "https://image.tmdb.org/t/p/w300/"
@@ -10,7 +11,7 @@ const MediaCard = ({ movie: { id, poster_path, title, name, media_type } }) => {
         <div></div>
 
         <div>
-          <img src={poster_path && poster_path !== "N/A" ? imgUrl + poster_path : "https://via.placeholder.com/400"} alt={title || name} />
+          <img src={poster_path && poster_path !== "N/A" ? imgUrl + poster_path : Fallback} alt={title || name} />
         </div>
 
         <div>
