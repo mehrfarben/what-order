@@ -47,7 +47,7 @@ const Order = () => {
                   <p>{item.title || item.name}</p>
                 </div>
               </Link>
-              <p>→</p>
+              <p className='then'>→</p>
             </>
           ))
         ) : (

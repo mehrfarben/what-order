@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import Order from "../components/Order"
 import Fallback from "../assets/fallback.png"
@@ -43,11 +43,15 @@ const Media = () => {
                 <h2>
                   {media_type === "movie" ? "Movie" : "TV Show"} {year && `(${year})`}
                 </h2>
+                {console.log(genres)}
+
                 {genres &&
                   genres.map(({ name }) => (
-                    <a className='genres' key={name} href='#'>
-                      {name}
-                    </a>
+                    <Link to={"/" + id + "-" + name}>
+                      <button className='genres' key={name} href='#'>
+                        {name}
+                      </button>
+                    </Link>
                   ))}
               </div>
               <div className='mediaOverview'>
