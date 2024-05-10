@@ -90,6 +90,30 @@ a {
   min-height: 100vh;
 }
 
+.genreTitleLeft {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.genreTitle {
+  user-select: none;
+  color: #212121;
+  font-size: 50px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rem;
+  margin-bottom: 1rem;
+  margin-left: 5%;
+}
+
+.genreTitle > p {
+  margin: 0px 0.3em 0px 0.3em;
+  color: #40798c;
+  text-shadow: 0px 0px 20px rgba(256, 256, 256, 0.5);
+}
+
 .searchTextWrapper {
   width: 80%;
   height: 20%;
@@ -167,7 +191,7 @@ a {
 .trending {
   display: flex;
   flex-direction: column;
-  margin: 20rem;
+  margin: 5rem;
   width: 75%;
   min-height: 100%;
   margin-top: 0;
@@ -176,6 +200,11 @@ a {
 .empty {
   margin-top: 10rem;
   color: #212121;
+}
+
+.space {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }
 
 .container {
@@ -316,6 +345,24 @@ a {
   margin-top: 0;
 }
 
+.mediaOverviewMobile {
+  display: none;
+  margin: 1.5rem;
+}
+
+.overviewTitleMobile {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.overviewTextMobile {
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-top: 0;
+}
+
 .genres {
   color: #212121;
   background-color: rgba(251, 251, 253, 0.8);
@@ -417,7 +464,7 @@ a {
   border: 25px solid #ffffff;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
   body {
     overflow-x: hidden;
   }
@@ -436,6 +483,94 @@ a {
 
   .trendingText {
     user-select: none;
-    font-size: 30px;
+    font-size: 35px;
+  }
+  .container > a {
+    width: 125px;
+    height: 182px;
+    margin: 2%;
+  }
+  .movie {
+    width: 125px;
+    height: 182px;
+    margin: 2%;
+  }
+  .trending {
+    width: 90%;
+  }
+
+  .posterDetail {
+    display: none;
+  }
+
+  .mediaPoster {
+    height: 85%;
+  }
+
+  .mediaApp {
+    height: 35vh;
+  }
+
+  .mediaName > h1 {
+    font-size: 1.3rem;
+    margin-right: 1rem;
+  }
+
+  .mediaName > h2 {
+    font-size: 0.9rem;
+  }
+
+  .mediaName > a > button {
+    font-size: 0.6rem;
+    margin-top: 0.7rem;
+  }
+
+  .mediaOverview {
+    display: none;
+  }
+
+  .mediaOverviewMobile {
+    display: block;
+  }
+
+  .genreTitle {
+    text-wrap: nowrap;
+    font-size: 15px;
+    margin-top: 7rem;
+  }
+
+  .genreTitleLeft {
+    justify-content: center;
+  }
+
+  .orderApp > h2 {
+    margin-top: 3rem;
+    font-size: 25px;
+  }
+
+  .order {
+    margin-bottom: 3rem;
+  }
+
+  .order > a {
+    width: 120px;
+    height: 182px;
+    margin-bottom: 6rem;
+    padding-right: 1rem;
+  }
+
+  .innerOrder > img {
+    width: 120px;
+    height: 182px;
+  }
+
+  .innerOrder {
+    width: 120px;
+    height: 182px;
+    margin: 1rem;
+  }
+
+  .innerOrder > p {
+    font-size: 12px;
   }
 }

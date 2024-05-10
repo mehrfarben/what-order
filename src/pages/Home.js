@@ -40,8 +40,8 @@ const Home = () => {
           <SearchBar />
         </div>
         <div className='trending'>
-          <h1 className='trendingText'>trending this week</h1>
           <div className='trendingData'>
+            <h1 className='trendingText'>trending this week</h1>
             {trendingData?.length > 0 ? (
               <div className='container'>
                 {trendingData.map((trending) => (

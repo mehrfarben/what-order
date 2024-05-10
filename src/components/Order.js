@@ -36,7 +36,6 @@ const Order = () => {
   return (
     <div className='orderApp'>
       <h2>what order to watch?</h2>
-
       <div className='order'>
         {data.length > 0 ? (
           data.map((item, index) => (
@@ -47,7 +46,7 @@ const Order = () => {
                   <p>{item.title || item.name}</p>
                 </div>
               </Link>
-              <p className='then'>→</p>
+              <p className='then'></p>
             </>
           ))
         ) : (

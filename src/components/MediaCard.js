@@ -14,7 +14,7 @@ const MediaCard = ({ movie: { id, poster_path, title, name, media_type } }) => {
           <img src={poster_path && poster_path !== "N/A" ? imgUrl + poster_path : Fallback} alt={title || name} />
         </div>
 
-        <div>
+        <div className='posterDetail'>
           <span>{media_type === "tv" ? media_type + " show" : media_type}</span>
           <h3>{title || name}</h3>
         </div>

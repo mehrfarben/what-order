@@ -43,14 +43,10 @@ const Media = () => {
                 <h2>
                   {media_type === "movie" ? "Movie" : "TV Show"} {year && `(${year})`}
                 </h2>
-                {console.log(genres)}
-
                 {genres &&
-                  genres.map(({ name }) => (
-                    <Link to={"/" + id + "-" + name}>
-                      <button className='genres' key={name} href='#'>
-                        {name}
-                      </button>
+                  genres.map(({ name, id }) => (
+                    <Link to={`/genre/${media_type}/${id}/${name}`} key={name}>
+                      <button className='genres'>{name}</button>
                     </Link>
                   ))}
               </div>
@@ -60,6 +56,10 @@ const Media = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className='mediaOverviewMobile'>
+          <p className='overviewTitleMobile'>Overview</p>
+          <p className='overviewTextMobile'>{overview}</p>
         </div>
         <Order />
       </div>
