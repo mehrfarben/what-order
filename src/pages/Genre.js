@@ -45,7 +45,7 @@ const Genre = () => {
       <div className='homeApp'>
         <div className='genreTitleLeft'>
           <div className='genreTitle'>
-            discover <p>{name.toLowerCase()}</p> {media_type === "tv" ? "tv show" : media_type}s
+            <p>{name.toLowerCase()}</p> {media_type === "tv" ? "tv show" : media_type}s
           </div>
         </div>
         <div className='container'>

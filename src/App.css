@@ -24,6 +24,7 @@ a {
 .header {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+  will-change: transform;
   position: fixed;
   width: 100vw;
   height: 55px;
@@ -106,12 +107,12 @@ a {
   flex-direction: row;
   margin-top: 10rem;
   margin-bottom: 1rem;
-  margin-left: 5%;
+  margin-left: 4%;
 }
 
 .genreTitle > p {
   margin: 0px 0.3em 0px 0.3em;
-  color: #40798c;
+  color: #274954;
   text-shadow: 0px 0px 20px rgba(256, 256, 256, 0.5);
 }
 
@@ -564,8 +565,9 @@ a {
 
   .genreTitle {
     text-wrap: nowrap;
-    font-size: 15px;
+    font-size: 1.8rem;
     margin-top: 7rem;
+    margin-left: 0;
   }
 
   .genreTitleLeft {
