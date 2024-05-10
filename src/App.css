@@ -495,21 +495,23 @@ a {
   }
 
   .trendingText {
+    margin-top: 5rem;
     user-select: none;
     font-size: 35px;
   }
   .container > a {
-    width: 125px;
-    height: 182px;
+    width: 150px;
+    height: 216px;
     margin: 2%;
   }
   .movie {
-    width: 125px;
-    height: 182px;
+    width: 150px;
+    height: 216px;
     margin: 2%;
   }
   .trending {
-    width: 90%;
+    width: 95%;
+    margin-bottom: 3rem;
   }
 
   .posterDetail {
