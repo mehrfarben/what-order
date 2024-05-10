@@ -51,14 +51,14 @@ const Media = () => {
                   ))}
               </div>
               <div className='mediaOverview'>
-                <p className='overviewTitle'>Overview</p>
+                <p className='overviewTitle'>overview</p>
                 <p className='overviewText'>{overview}</p>
               </div>
             </div>
           </div>
         </div>
         <div className='mediaOverviewMobile'>
-          <p className='overviewTitleMobile'>Overview</p>
+          <p className='overviewTitleMobile'>overview</p>
           <p className='overviewTextMobile'>{overview}</p>
         </div>
         <Order />
