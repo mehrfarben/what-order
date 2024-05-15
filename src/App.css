@@ -22,17 +22,9 @@ a {
 }
 
 .header {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  transform: translateZ(0);
-  -moz-transform: translatez(0);
-  -ms-transform: translatez(0);
-  -o-transform: translatez(0);
-  -webkit-transform: translateZ(0);
-  -webkit-font-smoothing: antialiased;
-  will-change: transform;
   position: fixed;
-  width: 100%;
+  width: 100vw;
+  max-width: 100%;
   height: 55px;
   display: flex;
   padding: 8px 0px;
@@ -624,6 +616,10 @@ label {
     font-size: 8vw;
   }
 
+  .navbtn:hover {
+    color: #212121;
+  }
+
   .btns {
     position: absolute;
     right: 0;
@@ -771,6 +767,14 @@ label {
 }
 
 @supports (-webkit-hyphens: none) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .header {
+    overflow: hidden;
+  }
+
   .logo {
     margin-left: 10rem;
   }
