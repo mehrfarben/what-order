@@ -612,10 +612,8 @@ label {
   }
 
   .header {
-    position: absolute;
-    border: none;
-    height: 6vh;
-    display: flex;
+    backdrop-filter: none;
+    background-color: #8abece;
     justify-content: center;
   }
 
