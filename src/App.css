@@ -566,6 +566,10 @@ label {
   margin: 1.3rem;
 }
 
+.adminApp {
+  margin-top: 10rem;
+}
+
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
