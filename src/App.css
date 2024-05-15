@@ -612,14 +612,16 @@ label {
   }
 
   .header {
+    position: absolute;
+    border: none;
     height: 6vh;
     display: flex;
     justify-content: center;
   }
 
   .hamburger {
-    padding-right: 1rem;
-    display: block;
+    padding-right: 5px;
+    display: inline-block;
     z-index: 1000;
     color: #274954;
   }
