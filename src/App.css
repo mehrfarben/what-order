@@ -775,3 +775,9 @@ label {
     margin-top: 60px;
   }
 }
+
+@media not all and (max-height: 899px) and (min-resolution: 0.1dpi) {
+  .safari-only {
+    margin-left: 5rem;
+  }
+}

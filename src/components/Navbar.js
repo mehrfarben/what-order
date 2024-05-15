@@ -33,7 +33,7 @@ const Navbar = () => {
   }, [])
 
   return (
-    <div className='header'>
+    <div className='header safari-only'>
       <Link to='/'>
         <img className='logo' src={Logo} alt='logo' />
       </Link>
