@@ -35,12 +35,12 @@ a {
   width: 100%;
   height: 55px;
   display: flex;
-  justify-content: space-around;
   padding: 8px 0px;
   user-select: none;
   z-index: 100;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(20px);
+  justify-content: space-evenly;
 }
 
 .mediaAll {
@@ -82,7 +82,6 @@ a {
 
 .hamburger {
   display: none;
-  position: fixed;
 }
 
 .mobile {
@@ -556,7 +555,7 @@ label {
   right: 0;
   width: 60%;
   height: 110vh;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(64, 121, 140, 0.98);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -617,6 +616,7 @@ label {
   }
 
   .hamburger {
+    margin-right: 1rem;
     display: block;
     z-index: 100000;
     color: #274954;
@@ -626,6 +626,15 @@ label {
     display: block;
     color: #fbfbfd;
     font-size: 8vw;
+  }
+
+  .btns {
+    position: absolute;
+    right: 0;
+  }
+
+  .white {
+    color: #fbfbfd;
   }
 
   .home {
