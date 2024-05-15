@@ -33,9 +33,9 @@ const Navbar = () => {
   }, [])
 
   return (
-    <div className='header safari-only'>
+    <div className='header'>
       <Link to='/'>
-        <img className='logo' src={Logo} alt='logo' />
+        <img className='logo safari-only' src={Logo} alt='logo' />
       </Link>
       <div className='btns'>
         <Link to='/about'>
