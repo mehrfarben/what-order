@@ -776,8 +776,40 @@ label {
   }
 }
 
-@media not all and (max-height: 899px) and (min-resolution: 0.1dpi) {
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    .safari-only {
+      margin-left: 8rem;
+    }
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @media {
+    .safari-only {
+      margin-left: 8rem;
+    }
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .safari-only {
+      margin-left: 8rem;
+    }
+  }
+}
+
+@supports (overflow: -webkit-marquee) and (-webkit-text-size-adjust: none) and (justify-content: inherit) {
   .safari-only {
-    margin-left: 5rem;
+    margin-left: 8rem;
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (display: flow-root) {
+    .safari-only {
+      margin-left: 8rem;
+    }
   }
 }
