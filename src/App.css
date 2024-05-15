@@ -175,7 +175,7 @@ a {
   background-color: #40798c;
   color: #fbfbfd;
   border: none;
-  padding: 20px;
+  padding: 18px;
   border-radius: 25px;
   user-select: none;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
@@ -611,12 +611,6 @@ label {
     overflow-x: hidden;
   }
 
-  .header {
-    backdrop-filter: none;
-    background-color: #8abece;
-    justify-content: center;
-  }
-
   .hamburger {
     padding-right: 5px;
     display: inline-block;
@@ -776,40 +770,14 @@ label {
   }
 }
 
-@media not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-    .safari-only {
-      margin-left: 8rem;
-    }
+@supports (-webkit-hyphens: none) {
+  .logo {
+    margin-left: 10rem;
   }
-}
 
-@media not all and (min-resolution: 0.001dpcm) {
-  @media {
-    .safari-only {
-      margin-left: 8rem;
-    }
-  }
-}
-
-@media not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) {
-    .safari-only {
-      margin-left: 8rem;
-    }
-  }
-}
-
-@supports (overflow: -webkit-marquee) and (-webkit-text-size-adjust: none) and (justify-content: inherit) {
-  .safari-only {
-    margin-left: 8rem;
-  }
-}
-
-@media not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) and (display: flow-root) {
-    .safari-only {
-      margin-left: 8rem;
-    }
+  .searchBtn {
+    top: -1px;
+    right: -2px;
+    padding: 22px;
   }
 }
