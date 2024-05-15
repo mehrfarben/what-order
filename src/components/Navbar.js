@@ -1,21 +1,34 @@
-import React from "react";
-import "../App.css";
-import Logo from "../assets/logo.png";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React, { useState } from "react"
+import "../App.css"
+import Logo from "../assets/logo.png"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { IconMenu2 } from "@tabler/icons-react"
+import HamburgerMenu from "./HamburgerMenu"
 
 const Navbar = () => {
-  return (
-    <div className="header">
-      <Link to="/">
-        <img className="logo" src={Logo} alt="logo" />
-      </Link>
-      <div className="btns">
-        <Link to="/">
-          <button className="navbtn home">home</button>
-        </Link>
-      </div>
-    </div>
-  );
-};
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-export default Navbar;
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
+  return (
+    <div className='header'>
+      <Link to='/'>
+        <img className='logo' src={Logo} alt='logo' />
+      </Link>
+      <div className='btns'>
+        <Link to='/about'>
+          <button className='navbtn home'>about</button>
+        </Link>
+        <Link to='/request'>
+          <button className='navbtn home'>request</button>
+        </Link>
+        <IconMenu2 className='hamburger' stroke={2} size={40} onClick={toggleMenu} />
+      </div>
+      {isMenuOpen && <HamburgerMenu />}
+    </div>
+  )
+}
+
+export default Navbar

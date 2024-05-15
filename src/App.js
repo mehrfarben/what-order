@@ -7,6 +7,8 @@ import Footer from "./components/Footer"
 import Media from "./pages/Media"
 import Search from "./pages/Search"
 import Genre from "./pages/Genre"
+import About from "./pages/About"
+import Request from "./pages/Request"
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path='/search' element={<Search />}></Route>
           <Route path='/:media_type/:id' element={<Media />}></Route>
           <Route path='/genre/:media_type/:id/:name' element={<Genre />}></Route>
+          <Route path='/about' element={<About />}></Route>
+          <Route path='/request' element={<Request />}></Route>
         </Routes>
         <Footer />
       </div>
