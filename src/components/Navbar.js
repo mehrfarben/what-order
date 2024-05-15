@@ -1,9 +1,8 @@
 import React, { useState, useRef, useEffect } from "react"
 import "../App.css"
 import Logo from "../assets/logo.png"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { IconMenu2 } from "@tabler/icons-react"
-import HamburgerMenu from "./HamburgerMenu"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -13,17 +12,23 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsMenuOpen(false)
+        closeMenu()
       }
     }
 
     document.addEventListener("mousedown", handleClickOutside)
+    document.querySelector(".hamburger").addEventListener("click", closeMenu)
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
+      document.querySelector(".hamburger").removeEventListener("click", closeMenu)
     }
   }, [])
 
@@ -39,13 +44,25 @@ const Navbar = () => {
         <Link to='/request'>
           <button className='navbtn home'>request</button>
         </Link>
-        <IconMenu2 className={`hamburger ${isMenuOpen ? "white" : ""}`} stroke={2} size={40} onClick={toggleMenu} />
+        <IconMenu2 className={`hamburger ${isMenuOpen ? "white" : ""}`} stroke={2} size={50} onClick={() => (isMenuOpen ? closeMenu() : toggleMenu())} />
+        {isMenuOpen && (
+          <div ref={menuRef}>
+            <div className='fullscreen-menu'>
+              <div className='menu-content'>
+                <Link to='/' onClick={closeMenu}>
+                  <button className='navbtn mobile'>home</button>
+                </Link>
+                <Link to='/about' onClick={closeMenu}>
+                  <button className='navbtn mobile'>about</button>
+                </Link>
+                <Link to='/request' onClick={closeMenu}>
+                  <button className='navbtn mobile'>request</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
-      {isMenuOpen && (
-        <div ref={menuRef}>
-          <HamburgerMenu />
-        </div>
-      )}
     </div>
   )
 }
