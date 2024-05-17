@@ -36,7 +36,6 @@ a {
 }
 
 .mediaAll {
-  padding-top: 3.5rem;
 }
 
 .logo {
@@ -301,7 +300,8 @@ a {
   backdrop-filter: blur(5px);
   width: 100%;
   height: 50vh;
-  padding-top: 4rem;
+  padding-top: 8rem;
+  padding-bottom: 2rem;
   display: flex;
 }
 
