@@ -7,24 +7,29 @@ const Admin = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
 
-    try {
-      const response = await fetch("src/api/addMovie", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      })
+    // src/pages/Admin.js
+    const handleSubmit = async (event) => {
+      event.preventDefault()
 
-      if (!response.ok) {
-        throw new Error("Failed to add data to watchorder.js")
+      try {
+        const response = await fetch("/api/addMovie", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        })
+
+        if (!response.ok) {
+          throw new Error("Failed to add data to watchorder.js")
+        }
+
+        const result = await response.json()
+        alert(result.success ? "Data added successfully" : "Failed to add data")
+      } catch (error) {
+        console.error("Error:", error.message)
+        alert("An error occurred while adding data to watchorder.js")
       }
-
-      const result = await response.text()
-      alert(result)
-    } catch (error) {
-      console.error("Error:", error.message)
-      alert("An error occurred while adding data to watchorder.js")
     }
   }
 

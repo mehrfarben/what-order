@@ -2,16 +2,17 @@
 const fs = require("fs")
 const path = require("path")
 
+// src/api/addMovie.js
 export default async function addMovie(req, res) {
   try {
     // Read the existing data from WatchOrder.js
     let existingData = require("../data/WatchOrder.js")
 
     // Extract movie data from request body
-    const { id, order } = req.body
+    const { id, order, media } = req.body
 
     // Append the new movie data to the existing movies array
-    existingData.movies.push({ id, order })
+    existingData.movies.push({ id, order, media })
 
     // Write the updated data back to WatchOrder.js
     fs.writeFileSync(path.resolve(__dirname, "../data/WatchOrder.js"), `export const WatchOrder = ${JSON.stringify(existingData, null, 2)};\n`)
