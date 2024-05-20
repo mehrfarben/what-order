@@ -1,68 +1,28 @@
-// AdminForm.js
-import React, { useState } from "react"
+import { sql } from "@vercel/postgres"
+import { useEffect, useState } from "react"
 
 const Admin = () => {
-  const [formData, setFormData] = useState({ id: "", order: "", media: "" })
+  const [data, setData] = useState([])
+  // ...
 
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-
-    // src/pages/Admin.js
-    const handleSubmit = async (event) => {
-      event.preventDefault()
-
+  useEffect(() => {
+    const fetchData = async () => {
       try {
-        const response = await fetch("/api/addMovie", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        })
-
-        if (!response.ok) {
-          throw new Error("Failed to add data to watchorder.js")
-        }
-
-        const result = await response.json()
-        alert(result.success ? "Data added successfully" : "Failed to add data")
+        const { rows } = await sql`
+        SELECT id, mediaorder, media
+        FROM watch_order
+      `
+        setData(rows)
+        console.log(data)
       } catch (error) {
-        console.error("Error:", error.message)
-        alert("An error occurred while adding data to watchorder.js")
+        console.error("Error fetching data:", error)
       }
     }
-  }
 
-  const handleChange = (event) => {
-    const { name, value } = event.target
-    setFormData({ ...formData, [name]: value })
-  }
+    fetchData()
+  }, [])
 
-  return (
-    <div className='homeApp'>
-      <div>
-        <h1>Add Data to watchorder</h1>
-        <form onSubmit={handleSubmit}>
-          <label>
-            ID:
-            <input type='text' name='id' value={formData.id} onChange={handleChange} />
-          </label>
-          <br />
-          <label>
-            Order (comma separated):
-            <input type='text' name='order' value={formData.order} onChange={handleChange} />
-          </label>
-          <br />
-          <label>
-            Media (comma separated):
-            <input type='text' name='media' value={formData.media} onChange={handleChange} />
-          </label>
-          <br />
-          <button type='submit'>Submit</button>
-        </form>
-      </div>
-    </div>
-  )
+  return <div></div>
 }
 
 export default Admin

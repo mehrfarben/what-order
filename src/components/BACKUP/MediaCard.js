@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Fallback from "../assets/fallback.png"
 
 const MediaCard = ({ movie: { id, poster_path, title, name, media_type } }) => {

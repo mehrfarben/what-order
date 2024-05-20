@@ -1,8 +1,10 @@
-import React, { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import React, { useState, useEffect } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import Search from "../pages/Search"
 
 const SearchBar = () => {
   const [searchData, setSearchData] = useState("")
+  const [searchTerm, setSearchTerm] = useState("")
   const navigate = useNavigate()
 
   const searchMedia = async () => {
@@ -35,6 +37,7 @@ const SearchBar = () => {
   const handleKeyPress = (event) => {
     if (event.keyCode === 13) {
       searchMedia()
+      setSearchTerm("")
     }
   }
 
