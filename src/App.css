@@ -35,9 +35,6 @@ a {
   justify-content: space-evenly;
 }
 
-.mediaAll {
-}
-
 .logo {
   cursor: pointer;
   height: 100%;
@@ -154,7 +151,6 @@ a {
 
 .searchInput:focus {
   outline: none;
-  transform: translateX(-5px);
 }
 
 .searchInput::placeholder {
@@ -777,6 +773,7 @@ label {
 
   .header {
     overflow: hidden;
+    position: relative;
   }
 
   .logo {
