@@ -6,24 +6,29 @@ import LogoWhite from "../assets/logo-white.png"
 const HamburgerMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen)
+    document.body.style.overflow = isMenuOpen ? "auto" : "hidden"
+  }
+
   return (
     <div className='hamburger-menu'>
       {isMenuOpen ? (
-        <IconX className={`hamburger ${isMenuOpen ? "white" : ""}`} stroke={1.75} size={50} onClick={() => setIsMenuOpen(false)} />
+        <IconX className={`hamburger ${isMenuOpen ? "white" : ""}`} stroke={1.75} size={50} onClick={handleMenuToggle} />
       ) : (
-        <IconMenu2 className={`hamburger ${isMenuOpen ? "white" : ""}`} stroke={2} size={50} onClick={() => setIsMenuOpen(!isMenuOpen)} />
+        <IconMenu2 className={`hamburger ${isMenuOpen ? "white" : ""}`} stroke={2} size={50} onClick={handleMenuToggle} />
       )}
 
       <div className={`fullscreen-menu ${isMenuOpen ? "open" : ""}`}>
         <img className='hamburger-logo' src={LogoWhite} alt='logo'></img>
         <div className='menu-content'>
-          <Link to='/' onClick={() => setIsMenuOpen(false)}>
+          <Link to='/' onClick={handleMenuToggle}>
             <button className='navbtn mobile'>home</button>
           </Link>
-          <Link to='/about' onClick={() => setIsMenuOpen(false)}>
+          <Link to='/about' onClick={handleMenuToggle}>
             <button className='navbtn mobile'>about</button>
           </Link>
-          <Link to='/request' onClick={() => setIsMenuOpen(false)}>
+          <Link to='/request' onClick={handleMenuToggle}>
             <button className='navbtn mobile'>request</button>
           </Link>
         </div>
