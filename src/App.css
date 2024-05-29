@@ -443,6 +443,7 @@ strong {
 }
 
 .sorry {
+  margin-left: 20px;
   font-size: 25px;
   font-weight: 300;
   color: #40798c;
@@ -450,8 +451,8 @@ strong {
 
 .sorry > a {
   font-weight: 500;
-  border-bottom: #212121 1px solid;
-  color: #212121;
+  text-decoration: underline #40798c;
+  color: #40798c;
 }
 
 .aboutContainer {
@@ -563,18 +564,23 @@ label {
   display: flex;
   position: fixed;
   top: 0;
-  right: 0;
-  width: 65%;
-  height: 110vh;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
   backdrop-filter: blur(20px);
-  background-color: rgba(64, 121, 140, 0.75);
+  background-color: rgba(0, 0, 0, 0.7);
   justify-content: center;
   z-index: 9999;
   overflow: hidden;
+  transition: right 0.15s ease-in-out;
+}
+
+.fullscreen-menu.open {
+  right: 0;
 }
 
 .menu-content {
-  margin-top: 55%;
+  margin-top: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -582,6 +588,13 @@ label {
 
 .menu-content button {
   margin: 1.3rem;
+}
+
+.hamburger-logo {
+  user-select: none;
+  position: absolute;
+  bottom: 2%;
+  height: 60px;
 }
 
 .hamburger {
@@ -637,11 +650,11 @@ label {
   .mobile {
     display: block;
     color: #fbfbfd;
-    font-size: 8vw;
+    font-size: 9vw;
   }
 
   .navbtn:hover {
-    color: #212121;
+    color: #40798c;
   }
 
   .btns {
@@ -694,7 +707,7 @@ label {
   }
 
   .mediaPoster {
-    height: 85%;
+    height: 90%;
   }
 
   .mediaPoster > img {
@@ -772,6 +785,11 @@ label {
 
   .innerOrder > p {
     font-size: 12px;
+  }
+
+  .sorry {
+    margin-left: 5px;
+    font-size: 18px;
   }
 
   .requestApp {

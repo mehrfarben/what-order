@@ -8,13 +8,14 @@ const Order = () => {
   const movie = WatchOrder.movies?.find((movie) => movie.id === id)
   const order = movie?.order
   const media = movie?.media ? movie.media : ["movie"]
+  const solo = movie?.solo ? movie.solo : false
   const apiKey = process.env.REACT_APP_API_KEY
   const imgUrl = "https://image.tmdb.org/t/p/w154"
   const [data, setData] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
-      if (order) {
+      if (order && !solo) {
         try {
           const responses = await Promise.all(
             order.map(async (element, index) => {
@@ -37,25 +38,34 @@ const Order = () => {
     <div className='orderApp'>
       <h2>what order to watch?</h2>
       <div className='order'>
-        {data.length > 0 ? (
-          data.map((item, index) => (
-            <>
-              <Link to={`/${media[index] || media[0]}/${item.id}`} key={item.id}>
-                <div className='innerOrder'>
-                  <img src={item.poster_path ? imgUrl + item.poster_path : Fallback} alt={item.title || item.name} />
-                  <p className='innerOrderName'>
-                    {item.title || item.name} <strong>({item.release_date || item.first_air_date ? (item.release_date || item.first_air_date).slice(0, 4) : "N/A"})</strong>
-                  </p>
-                  <p className='innerOrderYear'></p>
-                </div>
-              </Link>
-              <p className='then'></p>
-            </>
-          ))
+        {order && !solo ? (
+          data.length > 0 ? (
+            data.map((item, index) => (
+              <>
+                <Link to={`/${media[index] || media[0]}/${item.id}`} key={item.id}>
+                  <div className='innerOrder'>
+                    <img src={item.poster_path ? imgUrl + item.poster_path : Fallback} alt={item.title || item.name} />
+                    <p className='innerOrderName'>
+                      {item.title || item.name} <strong>({item.release_date || item.first_air_date ? (item.release_date || item.first_air_date).slice(0, 4) : "N/A"})</strong>
+                    </p>
+                    <p className='innerOrderYear'></p>
+                  </div>
+                </Link>
+                <p className='then'></p>
+              </>
+            ))
+          ) : (
+            <h1 className='sorry'>
+              sorry, we don't have the watch order for this.
+              <br /> you can request it <Link to={"/request"}>here</Link>.
+            </h1>
+          )
+        ) : solo ? (
+          <h1 className='sorry'>this doesn't have a sequel or a prequel.</h1>
         ) : (
           <h1 className='sorry'>
-            either this doesn't have a sequel / prequel or we don't have the watch order for it.
-            <br /> you can request it from <Link to={"/request"}>here</Link>.
+            sorry, we don't have the watch order for this.
+            <br /> you can request it <Link to={"/request"}>here.</Link>
           </h1>
         )}
       </div>
