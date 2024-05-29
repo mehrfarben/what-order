@@ -43,14 +43,20 @@ const Order = () => {
               <Link to={`/${media[index] || media[0]}/${item.id}`} key={item.id}>
                 <div className='innerOrder'>
                   <img src={item.poster_path ? imgUrl + item.poster_path : Fallback} alt={item.title || item.name} />
-                  <p>{item.title || item.name}</p>
+                  <p className='innerOrderName'>
+                    {item.title || item.name} <strong>({item.release_date || item.first_air_date ? (item.release_date || item.first_air_date).slice(0, 4) : "N/A"})</strong>
+                  </p>
+                  <p className='innerOrderYear'></p>
                 </div>
               </Link>
               <p className='then'></p>
             </>
           ))
         ) : (
-          <h1 className='sorry'>either this is a solo movie/tv show or we currently don't have the watch order for it.</h1>
+          <h1 className='sorry'>
+            either this doesn't have a sequel / prequel or we don't have the watch order for it.
+            <br /> you can request it from <Link to={"/request"}>here</Link>.
+          </h1>
         )}
       </div>
     </div>

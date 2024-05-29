@@ -55,6 +55,7 @@ a {
 }
 
 .navbtn {
+  user-select: none;
   color: #212121;
   font-size: 15px;
   font-weight: 500;
@@ -66,10 +67,6 @@ a {
 .navbtn:hover {
   cursor: pointer;
   color: #40798c;
-}
-
-.hamburger {
-  display: none;
 }
 
 .mobile {
@@ -140,6 +137,7 @@ a {
 }
 
 .searchInput {
+  user-select: none;
   width: 100%;
   border-radius: 30px;
   padding: 7px 24px;
@@ -419,10 +417,24 @@ a {
   transform: scale(102%);
 }
 
-.innerOrder > p {
+.innerOrderName {
   color: #212121;
   font-size: 15px;
   margin-top: 5px;
+}
+
+.innerOrderYear {
+  margin-top: 0;
+  color: #212121;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.red {
+  color: crimson;
 }
 
 .then {
@@ -436,7 +448,14 @@ a {
   color: #40798c;
 }
 
+.sorry > a {
+  font-weight: 500;
+  border-bottom: #212121 1px solid;
+  color: #212121;
+}
+
 .aboutContainer {
+  user-select: none;
   background-color: rgba(255, 255, 255, 0.3);
   padding: 50px;
   border-radius: 30px;
@@ -483,6 +502,7 @@ a {
 }
 
 .requestApp h1 {
+  user-select: none;
   margin-bottom: 3rem;
   padding: 20px;
 }
@@ -511,9 +531,10 @@ label {
 }
 
 .sendBtn {
-  width: 100px;
-  height: 30px;
-  border-radius: 10px;
+  font-size: 15px;
+  width: 110px;
+  height: 45px;
+  border-radius: 15px;
   border: none;
 }
 
@@ -545,9 +566,10 @@ label {
   right: 0;
   width: 65%;
   height: 110vh;
-  background-color: rgba(64, 121, 140, 0.98);
+  backdrop-filter: blur(20px);
+  background-color: rgba(64, 121, 140, 0.75);
   justify-content: center;
-  z-index: 99;
+  z-index: 9999;
   overflow: hidden;
 }
 
@@ -560,6 +582,13 @@ label {
 
 .menu-content button {
   margin: 1.3rem;
+}
+
+.hamburger {
+  display: hidden;
+  position: fixed;
+  right: 5px;
+  top: 10px;
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -600,9 +629,8 @@ label {
   }
 
   .hamburger {
-    padding-right: 5px;
-    display: inline-block;
-    z-index: 1000;
+    display: block;
+    z-index: 10000;
     color: #274954;
   }
 

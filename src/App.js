@@ -9,6 +9,7 @@ import Search from "./pages/Search"
 import Genre from "./pages/Genre"
 import About from "./pages/About"
 import Request from "./pages/Request"
+import HamburgerMenu from "./components/HamburgerMenu"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <div className='navbar'>
           <Navbar />
         </div>
+        <HamburgerMenu />
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/search' element={<Search />}></Route>

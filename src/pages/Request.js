@@ -26,12 +26,18 @@ export const Request = () => {
       <div className='requestApp'>
         <h1>request an order for a movie series/tv </h1>
         <form ref={form} onSubmit={sendEmail}>
-          <label>Name</label>
+          <label>
+            Name <strong className='red'>(optional)</strong>
+          </label>
           <input className='text' type='text' name='user_name' />
-          <label>Email</label>
+          <label>
+            Email <strong className='red'>(optional)</strong>
+          </label>
           <input className='text' type='email' name='user_email' />
-          <label>Message</label>
-          <textarea className='text' name='message' />
+          <label>
+            Name of the movie or tv series <strong className='red'>(required)</strong>
+          </label>
+          <textarea className='text' name='message' required />
           <input className='sendBtn' type='submit' value='Send' />
         </form>
       </div>
