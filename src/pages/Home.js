@@ -13,7 +13,7 @@ const Home = () => {
     }
 
     try {
-      const response = await fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}`)
+      const response = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${apiKey}`)
 
       if (!response.ok) {
         throw new Error(`Failed to fetch data: ${response.status}`)
@@ -41,7 +41,7 @@ const Home = () => {
         </div>
         <div className='trending'>
           <div className='trendingData'>
-            <h1 className='trendingText'>trending this week</h1>
+            <h1 className='trendingText'>popular today</h1>
             {trendingData?.length > 0 ? (
               <div className='container'>
                 {trendingData.map((trending) => (

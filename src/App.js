@@ -10,10 +10,12 @@ import Genre from "./pages/Genre"
 import About from "./pages/About"
 import Request from "./pages/Request"
 import HamburgerMenu from "./components/HamburgerMenu"
+import ScrollToTop from "./components/ScrollToTop"
 
 function App() {
   return (
     <MantineProvider>
+      <ScrollToTop />
       <div className='App'>
         <div className='navbar'>
           <Navbar />

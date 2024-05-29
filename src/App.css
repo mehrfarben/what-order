@@ -115,17 +115,23 @@ a {
   text-shadow: 0px 0px 20px rgba(256, 256, 256, 0.5);
 }
 
-.searchTextWrapper {
-  width: 80%;
-  height: 20%;
-  margin-top: 5rem;
-}
-
 .searchText {
+  margin: 10rem 2rem 2rem 2rem;
   user-select: none;
   font-size: 70px;
   font-weight: 900;
   color: #212121;
+}
+
+.heroText {
+  color: #274954;
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.heroText > strong {
+  font-weight: 700;
 }
 
 .search {
@@ -204,7 +210,7 @@ a {
 }
 
 .space {
-  margin-top: 4rem;
+  margin-top: 8rem;
   margin-bottom: 2rem;
 }
 
@@ -455,6 +461,14 @@ strong {
   color: #40798c;
 }
 
+.solo {
+  margin-left: 20px;
+  margin-bottom: 0;
+  font-size: 25px;
+  font-weight: 400;
+  color: #274954;
+}
+
 .aboutContainer {
   user-select: none;
   background-color: rgba(255, 255, 255, 0.3);
@@ -680,7 +694,14 @@ label {
   }
 
   .searchText {
+    margin-top: 7rem;
+    margin-bottom: 1rem;
     font-size: 40px;
+  }
+
+  .heroText {
+    font-size: 12px;
+    margin: 1rem 1rem 1.5rem 1rem;
   }
 
   .trendingText {

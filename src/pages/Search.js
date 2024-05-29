@@ -12,9 +12,6 @@ const Search = () => {
   return (
     <>
       <div className='homeApp'>
-        <div className='searchApp'>
-          <SearchBar />
-        </div>
         <div className='space'>
           <div className='container'>
             {searchResults.length > 0 ? (
