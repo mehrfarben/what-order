@@ -594,7 +594,7 @@ label {
 .hamburger-logo {
   user-select: none;
   position: absolute;
-  bottom: 10%;
+  bottom: 7vh;
   height: 60px;
 }
 
