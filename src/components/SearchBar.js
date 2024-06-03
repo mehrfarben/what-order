@@ -43,7 +43,7 @@ const SearchBar = () => {
       <div className='searchTextWrapper'>
         <h1 className='searchText'>what are you looking for?</h1>
         <h1 className='heroText'>
-          discover the ultimate viewing experience with <strong>what order</strong>. <br /> your guide for watching movies and tv shows in perfect chronological order.
+         welcome to <strong>what order</strong>. <br/> your guide for watching everything in chronological order.
         </h1>
       </div>
       <div className='search'>
