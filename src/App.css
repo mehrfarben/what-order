@@ -435,17 +435,16 @@ a {
   text-decoration: none;
 }
 
+.orderExtra {
+  color: #212121;
+}
+
 strong {
   font-weight: 500;
 }
 
 .red {
   color: crimson;
-}
-
-.then {
-  position: relative;
-  top: 100px;
 }
 
 .sorry {

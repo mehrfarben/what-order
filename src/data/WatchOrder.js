@@ -108,6 +108,7 @@ export const WatchOrder = {
       id: "1396",
       order: ["60059", "1396", "559969"],
       media: ["tv", "tv", "movie"],
+      extra: ["", "", "(This is the chronological order but director Vince Gilligan wanted you to watch it in release order.)"],
     },
     {
       id: "60059",
@@ -198,7 +199,6 @@ export const WatchOrder = {
     {
       id: "9659",
       order: ["9659", "8810", "9355", "76341", "786892", "340023"],
-      extra: ["1", "2", "3", "4", "5", "6"],
     },
     {
       id: "8810",
@@ -348,6 +348,21 @@ export const WatchOrder = {
       id: "314",
       order: ["437342", "794", "10766", "17792", "10768", "806"],
       extra: [],
+    },
+
+
+//VENOM
+    {
+      id: "335983", 
+      order: ["335983", "580489", "912649"],
+    },
+    {
+      id: "580489", 
+      order: ["335983", "580489", "912649"],
+    },
+    {
+      id: "912649", 
+      order: ["335983", "580489", "912649"],
     },
   ],
 }

@@ -49,7 +49,7 @@ const Order = () => {
                     <p className='innerOrderName'>
                       {item.title || item.name} <strong>({item.release_date || item.first_air_date ? (item.release_date || item.first_air_date).slice(0, 4) : "N/A"})</strong>
                     </p>
-                    <p>{extra}</p>
+                    <p className="orderExtra">{extra && extra[index]}</p>
                   </div>
                 </Link>
               </>
