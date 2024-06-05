@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import Hero from "../assets/hero.svg"
 
 const SearchBar = () => {
   const [searchData, setSearchData] = useState("")
@@ -40,11 +41,11 @@ const SearchBar = () => {
 
   return (
     <>
+     <img className="heroimg" src={Hero} alt="hero logo" draggable="false">
+        </img>
       <div className='searchTextWrapper'>
         <h1 className='searchText'>what are you looking for?</h1>
-        <h1 className='heroText'>
-         welcome to <strong>what order</strong>. <br/> your guide for watching everything in chronological order.
-        </h1>
+       
       </div>
       <div className='search'>
         <input className='searchInput' placeholder='Search for a series...' type='text' value={searchData} onChange={handleInputChange} onKeyDown={handleKeyPress} />

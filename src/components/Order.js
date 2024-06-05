@@ -43,15 +43,18 @@ const Order = () => {
           data.length > 0 ? (
             data.map((item, index) => (
               <>
+              <div className='innerOrder'>
                 <Link to={`/${media[index] || media[0]}/${item.id}`} key={item.id}>
-                  <div className='innerOrder'>
-                    <img src={item.poster_path ? imgUrl + item.poster_path : Fallback} alt={item.title || item.name} />
+                  
+                    <img className="innerOrderImg" src={item.poster_path ? imgUrl + item.poster_path : Fallback} alt={item.title || item.name} />
                     <p className='innerOrderName'>
                       {item.title || item.name} <strong>({item.release_date || item.first_air_date ? (item.release_date || item.first_air_date).slice(0, 4) : "N/A"})</strong>
                     </p>
-                    <p className="orderExtra">{extra && extra[index]}</p>
-                  </div>
+                    
+                  
                 </Link>
+                <p className="orderExtra">{extra && extra[index]}</p>
+                </div>
               </>
             ))
           ) : (
