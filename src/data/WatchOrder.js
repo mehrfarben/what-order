@@ -19,10 +19,12 @@ export const WatchOrder = {
     {
       id: "438631",
       order: ["438631", "693134"],
+      extra: ["deneme", "deneme"],
     },
     {
       id: "693134",
       order: ["438631", "693134"],
+      extra: ["deneme", "deneme"],
     },
 
     //STAR WARS
@@ -108,17 +110,19 @@ export const WatchOrder = {
       id: "1396",
       order: ["60059", "1396", "559969"],
       media: ["tv", "tv", "movie"],
-      extra: ["", "", "(This is the chronological order but director Vince Gilligan wanted you to watch it in release order.)"],
+      extra: ["(Director wanted you to watch this in release order.)", "", ""],
     },
     {
       id: "60059",
       order: ["60059", "1396", "559969"],
       media: ["tv", "tv", "movie"],
+      extra: ["(Director wanted you to watch this in release order.)", "", ""],
     },
     {
       id: "559969",
       order: ["60059", "1396", "559969"],
       media: ["tv", "tv", "movie"],
+      extra: ["(Director wanted you to watch this in release order.)", "", ""],
     },
 
     //GHOSTBUSTERS
@@ -351,7 +355,7 @@ export const WatchOrder = {
     },
 
 
-//VENOM
+    //VENOM
     {
       id: "335983", 
       order: ["335983", "580489", "912649"],

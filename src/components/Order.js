@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { WatchOrder } from "../data/WatchOrder"
-import Fallback from "../assets/fallback.png"
+import Fallback from "../assets/innerOrderFallback.png"
 
 const Order = () => {
   const { id } = useParams()
@@ -53,7 +53,9 @@ const Order = () => {
                     
                   
                 </Link>
+
                 <p className="orderExtra">{extra && extra[index]}</p>
+
                 </div>
               </>
             ))

@@ -14,7 +14,8 @@ import ScrollToTop from "./components/ScrollToTop"
 
 function App() {
   return (
-    <MantineProvider>
+<>
+<MantineProvider>
       <ScrollToTop />
       <div className='App'>
         <div className='navbar'>
@@ -31,7 +32,8 @@ function App() {
         </Routes>
         <Footer />
       </div>
-    </MantineProvider>
+      </MantineProvider>
+      </>
   )
 }
 

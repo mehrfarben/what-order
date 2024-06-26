@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import Hero from "../assets/hero.svg"
 
 const SearchBar = () => {
   const [searchData, setSearchData] = useState("")
@@ -41,8 +40,6 @@ const SearchBar = () => {
 
   return (
     <>
-     <img className="heroimg" src={Hero} alt="hero logo" draggable="false">
-        </img>
       <div className='searchTextWrapper'>
         <h1 className='searchText'>what are you looking for?</h1>
        
