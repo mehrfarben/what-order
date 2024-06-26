@@ -27,15 +27,15 @@ export const Request = () => {
         <h1>request an order for a movie series/tv </h1>
         <form ref={form} onSubmit={sendEmail}>
           <label>
-            Name <strong className='red'>(optional)</strong>
+            Name
           </label>
           <input className='text' type='text' name='user_name' />
           <label>
-            Email <strong className='red'>(optional)</strong>
+            Email
           </label>
           <input className='text' type='email' name='user_email' />
           <label>
-            Name of the movie or tv series <strong className='red'>(required)</strong>
+            Name of the movie or tv series <strong className='red'>*</strong>
           </label>
           <textarea className='text' name='message' required />
           <input className='sendBtn' type='submit' value='Send' />
