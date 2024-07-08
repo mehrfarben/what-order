@@ -516,9 +516,10 @@ label {
   right: 0;
 }
 .menu-content {
-  margin-top: 40%;
   display: flex;
   flex-direction: column;
+  margin-top: 5%;
+  justify-content: start;
   align-items: center;
   overflow: hidden;
 }
@@ -575,7 +576,7 @@ label {
   .mobile {
     display: block;
     color: #fbfbfd;
-    font-size: 9vw;
+    font-size: 7vw;
   }
   .navbtn:hover {
     color: #40798c;
