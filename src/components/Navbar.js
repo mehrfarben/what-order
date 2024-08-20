@@ -1,20 +1,19 @@
-import React, { useState, useRef, useEffect } from "react"
 import "../App.css"
-import Logo from "../assets/logo.png"
+import Logo from "../assets/logo.svg"
 import { Link } from "react-router-dom"
 
 const Navbar = () => {
   return (
-    <div className='header'>
+    <div className='px-20 py-2 fixed w-screen h-20 flex z-50 justify-between border-b border-Ogray bg-Owhite'>
       <Link to='/'>
-        <img className='logo safari-only' src={Logo} alt='logo' />
+        <img className='h-full cursor-pointer safari-only' src={Logo} alt='logo' />
       </Link>
-      <div className='btns'>
+      <div className='flex items-center gap-10'>
         <Link to='/about'>
-          <button className='navbtn home'>about</button>
+          <button className='select-none text-3xl ZT text-Oblue hover:text-Oblack'>about</button>
         </Link>
         <Link to='/request'>
-          <button className='navbtn home'>request</button>
+          <button className='select-none text-3xl ZT text-Oblue hover:text-Oblack'>request</button>
         </Link>
       </div>
     </div>

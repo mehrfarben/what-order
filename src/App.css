@@ -1,5 +1,5 @@
 * {
-  font-family: "Montserrat", Geneva, Verdana, sans-serif;
+  font-family: "Avenir Black", Geneva, Verdana, sans-serif;
   transition: 150ms;
 }
 html,
@@ -17,47 +17,76 @@ img {
 a {
   text-decoration: none;
 }
-.header {
-  position: fixed;
-  width: 100vw;
-  max-width: 100%;
-  height: 55px;
-  display: flex;
-  padding: 8px 0px;
-  user-select: none;
-  z-index: 100;
-  background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(20px);
-  justify-content: space-evenly;
+
+.ZT{
+  font-family: 'ZTFormom';
 }
-.logo {
-  cursor: pointer;
-  height: 100%;
+
+.ZT-Italic{
+  font-family: 'ZTFormom';
+  font-style: italic;
 }
-.logo:hover {
-  transform: scale(103%);
+
+.ABook{
+  font-family: 'Avenir Book';
 }
-.logo:active {
-  transform: scale(99%);
+
+.ABook-Italic{
+  font-family: 'Avenir Book';
+  font-style: italic;
 }
-.btns {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+
+.ACondensed{
+  font-family: 'Avenir Next Condensed';
 }
-.navbtn {
-  user-select: none;
-  color: #212121;
-  font-size: 15px;
-  font-weight: 500;
-  border: none;
-  border-radius: 20px;
-  background: none;
+
+/* Webfont: ZTFormom-Regular */@font-face {
+  font-family: 'ZTFormom';
+  src: url('./assets/fonts/ZT\ Formom.woff2') format('woff2'), /* Modern Browsers */
+       url('./assets/fonts/ZT Formom.otf') format('opentype'); /* Safari, Android, iOS */
+           font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
 }
-.navbtn:hover {
-  cursor: pointer;
-  color: #40798c;
+
+/* Webfont: ZTFormom-Oblique */@font-face {
+  font-family: 'ZTFormom';
+  src: url('./assets/fonts/ZT Formom Italic.woff2') format('woff2'), /* Modern Browsers */
+       url('./assets/fonts/ZT Formom Italic.otf') format('opentype'); /* Safari, Android, iOS */
+           font-style: italic;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
 }
+
+@font-face {
+  font-family: 'Avenir Book';
+  src: url('./assets/fonts/Avenir-Book.eot');
+  src: local('./assets/fonts/Avenir Book'), local('Avenir-Book'),
+      url('./assets/fonts/Avenir-Book.woff2') format('woff2'),
+      url('./assets/fonts/Avenir-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url('./assets/fonts/Avenir-Black.eot');
+  src: local('./assets/fonts/Avenir Black'), local('Avenir-Book'),
+      url('./assets/fonts/Avenir-Black.woff2') format('woff2'),
+      url('./assets/fonts/Avenir-Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir Next Condensed';
+  src: local('./assets/fonts/Avenir Next Condensed'), local('Avenir-Book'),
+      url('./assets/fonts/Avenir Next Condensed.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 .mobile {
   display: none;
 }
@@ -69,8 +98,7 @@ a {
   flex-direction: column;
 }
 .homeApp {
-  background: rgb(191, 226, 221);
-  background: radial-gradient(circle, rgba(191, 226, 221, 1) 50%, rgba(129, 184, 203, 1) 100%);
+  background: #e7e5df;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -98,72 +126,6 @@ a {
   margin: 0px 0.3em 0px 0.3em;
   color: #274954;
   text-shadow: 0px 0px 20px rgba(256, 256, 256, 0.5);
-}
-
-.searchText {
-  margin: 10rem 2rem 2rem 2rem;
-  user-select: none;
-  font-size: 70px;
-  font-weight: 900;
-  color: #212121;
-}
-
-.heroText {
-  color: #274954;
-  font-size: 25px;
-  font-weight: 400;
-  margin-bottom: 2rem;
-}
-
-.heroText > strong {
-  font-weight: 700;
-}
-
-.search {
-  width: 60%;
-  height: 4vh;
-  position: relative;
-  border-radius: 30px;
-  padding: 3px 50px 3px 10px;
-}
-.searchInput {
-  user-select: none;
-  width: 100%;
-  border-radius: 30px;
-  padding: 7px 24px;
-  font-size: 20px;
-  border: 1px #ddd solid;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
-  height: 35px;
-}
-.searchInput:focus {
-  outline: none;
-}
-.searchInput::placeholder {
-  color: #ccc;
-}
-.searchBtn {
-  font-weight: 500;
-  background-color: #40798c;
-  color: #fbfbfd;
-  border: none;
-  padding: 18px;
-  border-radius: 25px;
-  user-select: none;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  position: absolute;
-  right: -1px;
-  top: 2px;
-  outline: 0;
-}
-.searchBtn:hover {
-  background-color: #70a9a1;
-  padding-right: 23px;
-  padding-left: 23px;
-}
-.searchBtn:active {
-  background-color: #212121;
 }
 
 .trendingText {
@@ -602,10 +564,7 @@ label {
     margin-bottom: 1rem;
     font-size: 40px;
   }
-  .heroText {
-    font-size: 12px;
-    margin: 1rem 1rem 1.5rem 1rem;
-  }
+ 
   .trendingText {
     margin-top: 5rem;
     user-select: none;
