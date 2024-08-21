@@ -11,7 +11,7 @@ const Order = () => {
   const solo = movie?.solo ? movie.solo : false
   const extra = movie?.extra
   const apiKey = process.env.REACT_APP_API_KEY
-  const imgUrl = "https://image.tmdb.org/t/p/w154"
+  const imgUrl = "https://image.tmdb.org/t/p/w342"
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -36,22 +36,16 @@ const Order = () => {
   }, [id])
 
   return (
-    <div className='orderApp'>
-      <h2>what order to watch?</h2>
-      <div className='order'>
+    <div className='h-3/5'>
+      <h2 className="ZT text-Oblue text-3xl">you can watch it in this order →</h2>
+      <div className='flex pb-5 w-[99%] overflow-x-auto'>
         {order && !solo ? (
           data.length > 0 ? (
             data.map((item, index) => (
               <>
-              <div className='innerOrder'>
+              <div className='w-[205px] mr-8 mt-4'>
                 <Link to={`/${media[index] || media[0]}/${item.id}`} key={item.id}>
-                  
-                    <img className="innerOrderImg" src={item.poster_path ? imgUrl + item.poster_path : Fallback} alt={item.title || item.name} />
-                    <p className='innerOrderName'>
-                      {item.title || item.name} <strong>({item.release_date || item.first_air_date ? (item.release_date || item.first_air_date).slice(0, 4) : "N/A"})</strong>
-                    </p>
-                    
-                  
+                    <img className="min-h-[308px] min-w-[205px] hover:border-8 border-Oblue" src={item.poster_path ? imgUrl + item.poster_path : Fallback} alt={item.title || item.name} />   
                 </Link>
 
                 <p className="orderExtra">{extra && extra[index]}</p>
@@ -60,17 +54,15 @@ const Order = () => {
               </>
             ))
           ) : (
-            <h1 className='sorry'>
-              sorry, we don't have the watch order for this.
-              <br /> you can request it <Link to={"/request"}>here.</Link>
+            <h1 className=' '>
             </h1>
           )
         ) : solo ? (
-          <h1 className='solo'>this is a standalone movie / tv show.</h1>
+          <h1 className='ACondensed text-Oblack mt-4 text-2xl'>this is a standalone movie / tv show.</h1>
         ) : (
-          <h1 className='sorry'>
-            sorry, we don't have the watch order for this.
-            <br /> you can request it <Link to={"/request"}>here.</Link>
+          <h1 className='ACondensed text-Oblack mt-4 text-2xl'>
+            we don't have the order for this yet.
+            <br /> you can request it <Link className="underline" to={"/request"}>here.</Link>
           </h1>
         )}
       </div>

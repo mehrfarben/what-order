@@ -1,13 +1,12 @@
 import { Link, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import Order from "../components/Order"
-import Fallback from "../assets/fallback.png"
+import Fallback from "../assets/fallbackposter.png"
 
 const Media = () => {
   const { id, media_type } = useParams()
   const [data, setData] = useState({})
-  const imgUrl = "https://image.tmdb.org/t/p/w400"
-  const backgroundUrl = "https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces"
+  const imgUrl = "https://image.tmdb.org/t/p/w780"
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,49 +19,39 @@ const Media = () => {
     fetchData()
   }, [id, media_type])
 
-  const { title, name, poster_path, overview, release_date, first_air_date, backdrop_path, genres } = data
+  const { title, name, poster_path, overview, release_date, first_air_date, genres } = data
   const year = release_date || first_air_date ? (release_date || first_air_date).slice(0, 4) : ""
 
   return (
     <>
-      <div className='mediaAll'>
-        <div
-          className='background'
-          style={{
-            backgroundImage: `url(${backgroundUrl}${backdrop_path})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}>
-          <div className='mediaApp'>
-            <div className='mediaPoster'>
-              <img src={poster_path ? `${imgUrl}${poster_path}` : Fallback} alt={title || name} />
-            </div>
-            <div className='mediaInfo'>
-              <div className='mediaName'>
-                <h1>{title || name}</h1>
-                <h2>
+          <div className='flex pt-20 bg-Owhite w-full'>
+
+              <img className="h-[92vh]" src={poster_path ? `${imgUrl}${poster_path}` : Fallback} alt={title || name} />
+
+            <div className='ml-6 pt-5 flex flex-col justify-between overflow-x-hidden'>
+              <div className=''>
+                <h1 className="ZT text-Oblue text-6xl">{title || name}</h1>
+                <h2 className="ZT-Italic text-Oblue text-3xl py-4">
                   {media_type === "movie" ? "Movie" : "TV Show"} {year && `(${year})`}
                 </h2>
                 {genres &&
                   genres.map(({ name, id }) => (
                     <Link to={`/genre/${media_type}/${id}/${name}`} key={name}>
-                      <button className='genres'>{name}</button>
+                      <button className='bg-Oblue text-Owhite rounded-full px-4 py-1 mr-2 mb-6 ACondensed'>{name}</button>
                     </Link>
                   ))}
+              
+              <div>
+                <p className='text-Oblue text-4xl ZT font-semibold'>overview</p>
+                <p className='text-Oblue text-2xl ACondensed mr-12 pt-2'>{overview}</p>
               </div>
-              <div className='mediaOverview'>
-                <p className='overviewTitle'>overview</p>
-                <p className='overviewText'>{overview}</p>
+              </div>
+              <div className=" mb-8">
+              <Order />
               </div>
             </div>
           </div>
-        </div>
-        <div className='mediaOverviewMobile'>
-          <p className='overviewTitleMobile'>overview</p>
-          <p className='overviewTextMobile'>{overview}</p>
-        </div>
-        <Order />
-      </div>
+        
     </>
   )
 }

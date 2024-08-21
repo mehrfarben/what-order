@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 const Navbar = () => {
   return (
-    <div className='px-20 py-2 fixed w-screen h-20 flex z-50 justify-between border-b border-Ogray bg-Owhite'>
+    <div className='px-[5%] py-2 fixed w-full h-20 flex z-50 justify-between border-b border-Ogray bg-Owhite'>
       <Link to='/'>
         <img className='h-full cursor-pointer safari-only' src={Logo} alt='logo' />
       </Link>

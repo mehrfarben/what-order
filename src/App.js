@@ -14,13 +14,11 @@ function App() {
   return (
 <>
       <ScrollToTop />
-      <div className='App'>
-        <div className="navbar">
+      <div className='bg-Owhite min-h-screen relative'>
           <Navbar />
-        </div>
         <Routes>
           <Route path='/' element={<Home />}></Route>
-          <Route path='/search' element={<Search />}></Route>
+          <Route path='/search/:name' element={<Search />}></Route>
           <Route path='/:media_type/:id' element={<Media />}></Route>
           <Route path='/genre/:media_type/:id/:name' element={<Genre />}></Route>
           <Route path='/about' element={<About />}></Route>
