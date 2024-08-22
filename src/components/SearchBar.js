@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import WatchOut from "../assets/watchout.svg"
 import WatchOutMobile from "../assets/watchout_mobile.svg"
 import Moon from "../assets/moon.png"
+import Ok from "../assets/ok.svg"
 
 const SearchBar = () => {
   const [searchData, setSearchData] = useState("")
@@ -57,12 +58,13 @@ const SearchBar = () => {
         </section>
         <section className="w-full flex justify-center items-center mt-[5vw]">
           <input className='bg-transparent w-3/5 lg:w-2/5 text-lg lg:text-3xl border-b border-Oblue text-Oblue focus: outline-none ABook-Italic placeholder:text-Oblue' placeholder='explore now' type='text' value={searchData} onChange={handleInputChange} onKeyDown={handleKeyPress} />
-            <button className='px-4 lg:px-8 py-2 lg:py-3 bg-Oblue rounded-full lg:text-3xl text-Owhite ACondensed hover:px-10' onClick={searchMedia}>
+            <button className='px-4 lg:px-8 py-2 lg:py-3 bg-Oblue rounded-full lg:text-3xl text-Owhite ACondensed hover:px-10 ' onClick={searchMedia}>
               search
             </button>
         </section>
-        <section className="flex lg:hidden justify-center mt-10 ZT-Italic text-Oblue text-2xl">
-          swipe to explore more
+        <section className="flex flex-col lg:hidden items-center mt-10 ">
+          <p className="ZT-Italic text-Oblue text-2xl">swipe to explore more</p>
+          <img className="size-12 rotate-90 mt-1" src={Ok} alt="" />
         </section>
         </main>
     </>

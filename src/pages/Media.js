@@ -44,10 +44,10 @@ const Media = () => {
               
               <div>
                 <p className='text-Oblue text-4xl ZT font-semibold'>overview</p>
-                <p className='text-Oblue text-2xl ACondensed mr-12 pt-2'>{overview}</p>
+                <p className='text-Oblue text-md lg:text-2xl ACondensed mr-12 pt-2 pb-4 lg:pb-0 min-h-36 lg:min-h-0'>{overview}</p>
               </div>
               </div>
-              <div className=" mb-8">
+              <div className="mb-16 mt-10">
               <Order />
               </div>
             </div>

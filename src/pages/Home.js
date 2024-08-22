@@ -36,7 +36,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="bg-Owhite flex flex-col items-center pb-10">
+      <div className="bg-Owhite flex flex-col items-center pb-20">
         <div className="flex flex-col h-screen">
           <SearchBar />
         </div>

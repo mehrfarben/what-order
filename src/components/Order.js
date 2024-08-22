@@ -37,8 +37,8 @@ const Order = () => {
 
   return (
     <div className='h-3/5'>
-      <h2 className="ZT text-Oblue text-3xl">you can watch it in this order →</h2>
-      <div className='flex pb-5 w-[99%] overflow-x-auto'>
+      <h2 className="ZT text-Oblue text-2xl lg:text-3xl">you can watch it in this order →</h2>
+      <div className='flex pb-3 w-[99%] overflow-x-auto'>
         {order && !solo ? (
           data.length > 0 ? (
             data.map((item, index) => (
