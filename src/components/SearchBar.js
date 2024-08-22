@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import WatchOut from "../assets/watchout.svg"
+import WatchOutMobile from "../assets/watchout_mobile.svg"
 import Moon from "../assets/moon.png"
 
 const SearchBar = () => {
@@ -43,20 +44,25 @@ const SearchBar = () => {
     <>
       <main className='mt-20 w-full flex items-center flex-col z-10'>
         <section>
-        <img className="w-[100vw]" src={WatchOut} alt="" />
+        <img className="w-[100vw] mt-5 hidden sm:block" src={WatchOut} alt="" />
+        <img className="w-[100vw] mt-5 block sm:hidden" src={WatchOutMobile} alt="" />
         </section>
         <section className="w-11/12">
         <p className="ZT text-Oblue xs:text-2xl sm:text-3xl lg:text-5xl text-center">Welcome to What Order - your ultimate guide to navigating the world of movies and tv series! Whether you're diving into a cinematic universe for the first time or revisiting a beloved franchise, our platform helps you find the perfect viewing sequence. Say goodbye to confusion and spoilers - What Order ensures you enjoy every story in the best possible way.</p>
         </section>
       </main>
-      <main className="flex relative w-full justify-evenly h-full z-0">
-        <img className="z-[-1] left-5 base:relative xl:absolute -bottom-40 w-[23%]" src={Moon} alt="" />
-        
-        <section className="flex items-center md:w-4/5 xl:w-1/3 mt-0 lg:mt-20 lg:ml-20">
-          <input className='bg-transparent w-full text-3xl border-b border-Oblue text-Oblue focus: outline-none ABook-Italic' placeholder='explore now' type='text' value={searchData} onChange={handleInputChange} onKeyDown={handleKeyPress} />
-            <button className='px-8 py-3 bg-Oblue rounded-full text-3xl text-Owhite ACondensed hover:px-10' onClick={searchMedia}>
+      <main className="relative w-full  h-screen  justify-evenly z-0">
+        <section className="overflow-hidden">
+        <img className="z-[-1] opacity-70 w-[50%] lg:w-[20%] absolute -bottom-5 right-0 lg:left-0" src={Moon} alt="Moon from the movie A Trip to the Moon" />
+        </section>
+        <section className="w-full flex justify-center items-center mt-[5vw]">
+          <input className='bg-transparent w-3/5 lg:w-2/5 text-lg lg:text-3xl border-b border-Oblue text-Oblue focus: outline-none ABook-Italic placeholder:text-Oblue' placeholder='explore now' type='text' value={searchData} onChange={handleInputChange} onKeyDown={handleKeyPress} />
+            <button className='px-4 lg:px-8 py-2 lg:py-3 bg-Oblue rounded-full lg:text-3xl text-Owhite ACondensed hover:px-10' onClick={searchMedia}>
               search
             </button>
+        </section>
+        <section className="flex lg:hidden justify-center mt-10 ZT-Italic text-Oblue text-2xl">
+          swipe to explore more
         </section>
         </main>
     </>

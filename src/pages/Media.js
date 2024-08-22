@@ -19,25 +19,26 @@ const Media = () => {
     fetchData()
   }, [id, media_type])
 
-  const { title, name, poster_path, overview, release_date, first_air_date, genres } = data
+  const { title, name, poster_path, backdrop_path, overview, release_date, first_air_date, genres } = data
   const year = release_date || first_air_date ? (release_date || first_air_date).slice(0, 4) : ""
 
   return (
     <>
-          <div className='flex pt-20 bg-Owhite w-full'>
+          <div className='flex flex-col lg:flex-row pt-20 bg-Owhite w-full'>
 
-              <img className="h-[92vh]" src={poster_path ? `${imgUrl}${poster_path}` : Fallback} alt={title || name} />
+              <img className="h-[90vh] hidden lg:block" src={poster_path ? `${imgUrl}${poster_path}` : Fallback} alt={title || name} />
+              <img className=" block lg:hidden" src={backdrop_path? `${imgUrl}${backdrop_path}` : Fallback} alt={title || name} />
 
             <div className='ml-6 pt-5 flex flex-col justify-between overflow-x-hidden'>
               <div className=''>
-                <h1 className="ZT text-Oblue text-6xl">{title || name}</h1>
-                <h2 className="ZT-Italic text-Oblue text-3xl py-4">
+                <h1 className="ZT text-Oblue text-2xl lg:text-6xl">{title || name}</h1>
+                <h2 className="ZT-Italic text-Oblue text-xl lg:text-3xl py-4">
                   {media_type === "movie" ? "Movie" : "TV Show"} {year && `(${year})`}
                 </h2>
                 {genres &&
                   genres.map(({ name, id }) => (
                     <Link to={`/genre/${media_type}/${id}/${name}`} key={name}>
-                      <button className='bg-Oblue text-Owhite rounded-full px-4 py-1 mr-2 mb-6 ACondensed'>{name}</button>
+                      <button className='bg-Oblue text-Owhite rounded-full text-xs lg:text-lg px-4 py-1 mr-2 mb-6 ACondensed'>{name}</button>
                     </Link>
                   ))}
               

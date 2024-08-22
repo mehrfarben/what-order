@@ -43,13 +43,15 @@ const Order = () => {
           data.length > 0 ? (
             data.map((item, index) => (
               <>
-              <div className='w-[205px] mr-8 mt-4'>
+              <div className='w-[153px] mr-8 mt-4'>
                 <Link to={`/${media[index] || media[0]}/${item.id}`} key={item.id}>
-                    <img className="min-h-[308px] min-w-[205px] hover:border-8 border-Oblue" src={item.poster_path ? imgUrl + item.poster_path : Fallback} alt={item.title || item.name} />   
+                    <img className="min-h-[231px] min-w-[153px] hover:border-8 border-Oblue" src={item.poster_path ? imgUrl + item.poster_path : Fallback} alt={item.title || item.name} />   
                 </Link>
-
+                <div className="">
+                <p className="ACondensed text-Oblue">{item.title || item.name}</p>
+                </div>
                 <p className="orderExtra">{extra && extra[index]}</p>
-
+                
                 </div>
               </>
             ))
@@ -64,6 +66,7 @@ const Order = () => {
             we don't have the order for this yet.
             <br /> you can request it <Link className="underline" to={"/request"}>here.</Link>
           </h1>
+          
         )}
       </div>
     </div>

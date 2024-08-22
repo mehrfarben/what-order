@@ -36,14 +36,14 @@ const Home = () => {
 
   return (
     <>
-      <div className="bg-Owhite flex flex-col items-center min-h-screen pb-10">
-        <div className="flex flex-col min-h-screen">
+      <div className="bg-Owhite flex flex-col items-center pb-10">
+        <div className="flex flex-col h-screen">
           <SearchBar />
         </div>
         <div className="mt-10">
           <div className="flex flex-col items-start w-fit">
             {trendingData?.length > 0 ? (
-              <div className="flex justify-center flex-wrap ">
+              <div className="flex justify-center flex-wrap mt-20">
                 <h1 className="text-start ZT text-6xl text-Oblue m-4 w-[372px]">popular today→</h1>
                 {trendingData.map((trending) => (
                   <MediaCard key={trending.id} movie={trending} />
