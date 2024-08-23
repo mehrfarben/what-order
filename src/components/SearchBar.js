@@ -5,7 +5,7 @@ import WatchOutMobile from "../assets/watchout_mobile.svg"
 import Moon from "../assets/moon.png"
 import Ok from "../assets/ok.svg"
 
-const SearchBar = () => {
+const SearchBar = ({handleScroll}) => {
   const [searchData, setSearchData] = useState("")
   const navigate = useNavigate()
 
@@ -62,8 +62,8 @@ const SearchBar = () => {
               search
             </button>
         </section>
-        <section className="flex flex-col lg:hidden items-center mt-10 animate-updown">
-          <p className="ZT-Italic text-Oblue text-xl ">swipe to explore more</p>
+        <section onClick={handleScroll} className="flex flex-col ak:hidden akn:flex lg:hidden items-center mt-10 animate-updown">
+          <p className="ZT-Italic text-Oblue text-xl ">click to explore more</p>
           <img className="size-8 rotate-90 mt-1" src={Ok} alt="" />
         </section>
         </main>

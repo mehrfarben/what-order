@@ -10,7 +10,7 @@ const Navbar = () => {
       <Link to="/">
         <img className="h-full cursor-pointer safari-only" src={Logo} alt="logo" />
       </Link>
-      <div className="flex items-center gap-10">
+      <div className="flex items-center gap-5">
         <Link to="/about">
           <button
             className={`select-none text-xl lg:text-3xl ZT ${

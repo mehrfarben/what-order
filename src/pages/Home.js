@@ -1,9 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import MediaCard from "../components/MediaCard";
 import SearchBar from "../components/SearchBar";
 
 const Home = () => {
   const [trendingData, setTrendingData] = useState([]);
+  const mediaRef = useRef(null);
+
+  const handleScroll = () => {
+    if (mediaRef.current) {
+      mediaRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   const getTrendingData = async () => {
     const apiKey = process.env.REACT_APP_API_KEY;
@@ -36,18 +43,19 @@ const Home = () => {
 
   return (
     <>
-      <div className="bg-Owhite overflow-y-scroll overflow-x-hidden flex flex-col h-screen items-center pb-20 snap-y snap-mandatory lg:snap-none ">
-        <div className="flex flex-col h-screen snap-start">
-          <SearchBar />
+      <div className="bg-Owhite flex flex-col items-center pb-20 overflow-x-hidden">
+        <div className="flex flex-col h-screen ">
+          <SearchBar handleScroll={handleScroll}/>
         </div>
-        <div className="mt-10 ">
-          <div className="flex flex-col items-start w-fit min-h-screen snap-start">
+        <div className="pt-8 lg:mt-32" ref={mediaRef}>
+          <div className="flex flex-col items-start w-fit mt-10" >
             {trendingData?.length > 0 ? (
-              <div className="flex justify-center flex-wrap mt-20 mb-10">
-                <h1 className="text-start ZT text-6xl text-Oblue m-4 w-[372px]">popular today→</h1>
+              <div className="flex justify-center flex-wrap" >
+                <h1 className="text-start ZT pl-4 text-5xl lg:text-6xl text-Oblue m-4 w-[372px]">popular today→</h1>
                 {trendingData.map((trending) => (
-                  <MediaCard key={trending.id} movie={trending} />
+                  <MediaCard key={trending.id} movie={trending}  />
                 ))}
+                <div className='absolute bottom-0 left-0 select-none py-2 w-full bg-Oblue text-Owhite text-xs text-center'>What Order 2024 ©</div>
               </div>
             ) : (
               <div className="empty">

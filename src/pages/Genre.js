@@ -40,14 +40,15 @@ const Genre = () => {
   console.log(data)
   return (
     <>
-        <div className='pt-32'>
+        <div className='py-20 lg:pt-32'>
           {data !== null && data.results !== undefined && data.results.length > 0 ? (
-            <div className='w-full mb-12 flex justify-center flex-wrap'>
+            <div className='w-full flex justify-center flex-wrap'>
             <p className="text-start ZT text-6xl text-Oblue m-4 w-[372px]">{name.toLowerCase()} {media_type === "tv" ? "tv show" : media_type}s→</p>
             {data.results.map((result) => (
               
               <MediaCard movie={result} />
             ))}
+            <div className='absolute bottom-0 left-0 select-none py-2 w-full bg-Oblue text-Owhite text-xs text-center'>What Order 2024 ©</div>
             </div>
           ) : (
             <p>No results found.</p>
