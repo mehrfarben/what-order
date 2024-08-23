@@ -2,7 +2,6 @@ import "./App.css"
 import Navbar from "./components/Navbar"
 import { Routes, Route } from "react-router"
 import Home from "./pages/Home"
-import Footer from "./components/Footer"
 import Media from "./pages/Media"
 import Search from "./pages/Search"
 import Genre from "./pages/Genre"
@@ -24,7 +23,6 @@ function App() {
           <Route path='/about' element={<About />}></Route>
           <Route path='/request' element={<Request />}></Route>
         </Routes>
-        <Footer />
       </div>
       </>
   )

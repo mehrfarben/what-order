@@ -36,14 +36,14 @@ const Home = () => {
 
   return (
     <>
-      <div className="bg-Owhite flex flex-col items-center pb-20">
-        <div className="flex flex-col h-screen">
+      <div className="bg-Owhite overflow-y-scroll overflow-x-hidden flex flex-col h-screen items-center pb-20 snap-y snap-mandatory lg:snap-none ">
+        <div className="flex flex-col h-screen snap-start">
           <SearchBar />
         </div>
-        <div className="mt-10">
-          <div className="flex flex-col items-start w-fit">
+        <div className="mt-10 ">
+          <div className="flex flex-col items-start w-fit min-h-screen snap-start">
             {trendingData?.length > 0 ? (
-              <div className="flex justify-center flex-wrap mt-20">
+              <div className="flex justify-center flex-wrap mt-20 mb-10">
                 <h1 className="text-start ZT text-6xl text-Oblue m-4 w-[372px]">popular today→</h1>
                 {trendingData.map((trending) => (
                   <MediaCard key={trending.id} movie={trending} />

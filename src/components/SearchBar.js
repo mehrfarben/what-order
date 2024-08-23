@@ -62,9 +62,9 @@ const SearchBar = () => {
               search
             </button>
         </section>
-        <section className="flex flex-col lg:hidden items-center mt-10 ">
-          <p className="ZT-Italic text-Oblue text-2xl">swipe to explore more</p>
-          <img className="size-12 rotate-90 mt-1" src={Ok} alt="" />
+        <section className="flex flex-col lg:hidden items-center mt-10 animate-updown">
+          <p className="ZT-Italic text-Oblue text-xl ">swipe to explore more</p>
+          <img className="size-8 rotate-90 mt-1" src={Ok} alt="" />
         </section>
         </main>
     </>

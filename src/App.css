@@ -91,104 +91,12 @@ a {
   margin-top: 10rem;
   color: #212121;
 }
-.space {
-  margin-top: 8rem;
-  margin-bottom: 2rem;
-}
 
 .orderExtra {
   font-size: 14px;
   color: #7c7c7c;
 }
 
-.requestApp {
-  margin-top: 100px;
-}
-.requestApp form {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.requestApp h1 {
-  user-select: none;
-  margin-bottom: 3rem;
-  padding: 20px;
-}
-.text {
-  width: 60%;
-  padding: 20px;
-  font-size: 15px;
-  border-radius: 20px;
-  border: none;
-  margin-top: 5px;
-  margin-bottom: 25px;
-  resize: none;
-}
-label {
-  user-select: none;
-}
-.text:focus {
-  outline: none;
-}
-.requestApp textarea {
-  height: 100px;
-}
-.sendBtn {
-  font-size: 15px;
-  width: 110px;
-  height: 45px;
-  border-radius: 15px;
-  border: none;
-}
-.sendBtn:hover {
-  cursor: pointer;
-  background-color: #70a9a1;
-  color: #fbfbfd;
-}
-.sendBtn:active {
-  background-color: #212121;
-}
-
-.fullscreen-menu {
-  display: flex;
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(20px);
-  background-color: rgba(0, 0, 0, 0.7);
-  justify-content: center;
-  z-index: 9999;
-  overflow: hidden;
-  transition: right 0.2s ease-in-out;
-}
-.fullscreen-menu.open {
-  right: 0;
-}
-.menu-content {
-  display: flex;
-  flex-direction: column;
-  margin-top: 5%;
-  justify-content: start;
-  align-items: center;
-  overflow: hidden;
-}
-.menu-content button {
-  margin: 1.3rem;
-}
-.hamburger-logo {
-  user-select: none;
-  position: absolute;
-  bottom: 7vh;
-  height: 60px;
-}
-.hamburger {
-  display: hidden;
-  position: fixed;
-  right: 5px;
-  top: 10px;
-}
 /* ===== Scrollbar CSS ===== */
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {

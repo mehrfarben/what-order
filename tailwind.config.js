@@ -10,7 +10,23 @@ module.exports = {
       'Oblack': '#181818',
       'Ogray': '#cecece',
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        updown: {
+          '0%, 100%': {
+            transform: 'translateY(-30%)',
+            animationTimingFunction: 'ease-in-out',
+          },
+          '50%': {
+            transform: 'translateY(0)',
+            animationTimingFunction: 'ease-in-out',
+          },
+        },
+      },
+      animation: {
+        updown: 'updown 2.5s infinite',
+      },
+    },
   },
   plugins: [],
 }

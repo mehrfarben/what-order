@@ -37,7 +37,7 @@ const Order = () => {
 
   return (
     <div className='h-3/5'>
-      <h2 className="ZT text-Oblue text-2xl lg:text-3xl">you can watch it in this order →</h2>
+      <h2 className="ZT text-Oblue text-xl lg:text-3xl">you can watch it in this order →</h2>
       <div className='flex pb-3 w-[99%] overflow-x-auto'>
         {order && !solo ? (
           data.length > 0 ? (
@@ -60,9 +60,9 @@ const Order = () => {
             </h1>
           )
         ) : solo ? (
-          <h1 className='ACondensed text-Oblack mt-4 text-2xl'>this is a standalone movie / tv show.</h1>
+          <h1 className='ACondensed text-Oblack mt-4 text-sm lg:text-2xl'>this is a standalone movie / tv show.</h1>
         ) : (
-          <h1 className='ACondensed text-Oblack mt-4 text-2xl'>
+          <h1 className='ACondensed text-Oblack mt-4 text-sm lg:text-2xl'>
             we don't have the order for this yet.
             <br /> you can request it <Link className="underline" to={"/request"}>here.</Link>
           </h1>
