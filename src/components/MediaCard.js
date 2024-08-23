@@ -7,7 +7,7 @@ const MediaCard = ({ movie: { id, release_date, first_air_date, title, backdrop_
   const year = release_date || first_air_date ? (release_date || first_air_date).slice(0, 4) : "";
 
   return (
-    <span className="group w-[334px] h-[188px] m-3 md:w-[372px] md:h-[209px] md:m-4 relative hover:transform lg:hover:scale-110 hover:scale-100" key={id}>
+    <span className="group w-[334px] h-[188px] ak:m-1 m-3 md:w-[372px] md:h-[209px] md:m-4 relative hover:transform lg:hover:scale-110 hover:scale-100" key={id}>
       <Link to={"/" + media_type + "/" + id}>
         <div className="absolute inset-0 bg-Oblue opacity-40 group-hover:opacity-0"></div>
         <img

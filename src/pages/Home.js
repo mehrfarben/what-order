@@ -47,11 +47,11 @@ const Home = () => {
         <div className="flex flex-col h-screen ">
           <SearchBar handleScroll={handleScroll}/>
         </div>
-        <div className="pt-8 lg:mt-32" ref={mediaRef}>
+        <div className="pt-8 ak:mt-24  lg:mt-32" ref={mediaRef}>
           <div className="flex flex-col items-start w-fit mt-10" >
             {trendingData?.length > 0 ? (
               <div className="flex justify-center flex-wrap" >
-                <h1 className="text-start ZT pl-4 text-5xl lg:text-6xl text-Oblue m-4 w-[372px]">popular today→</h1>
+                <h1 className="text-center ZT pl-4 text-5xl lg:text-6xl text-Oblue m-4 w-[372px]">popular today→</h1>
                 {trendingData.map((trending) => (
                   <MediaCard key={trending.id} movie={trending}  />
                 ))}

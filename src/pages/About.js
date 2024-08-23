@@ -3,7 +3,7 @@ import Us from '../assets/us.png'
 
 const About = () => {
   return (
-      <div className='h-screen pt-28'>
+      <div className='h-full pt-28 '>
         <div className="flex h-full flex-col items-end">
           <img className="w-full px-1 lg:w-3/5" src={AboutText} alt='About Text' />
           <div className="py-10 flex justify-end items-center">

@@ -49,7 +49,7 @@ const SearchBar = ({handleScroll}) => {
         <img className="w-[100vw] mt-5 block sm:hidden" src={WatchOutMobile} alt="" />
         </section>
         <section className="w-11/12">
-        <p className="ZT text-Oblue xs:text-2xl sm:text-3xl lg:text-5xl text-center">Welcome to What Order - your ultimate guide to navigating the world of movies and tv series! Whether you're diving into a cinematic universe for the first time or revisiting a beloved franchise, our platform helps you find the perfect viewing sequence. Say goodbye to confusion and spoilers - What Order ensures you enjoy every story in the best possible way.</p>
+        <p className="ZT text-Oblue ak:text-lg xs:text-2xl sm:text-3xl lg:text-5xl text-center">Welcome to What Order - your ultimate guide to navigating the world of movies and tv series! Whether you're diving into a cinematic universe for the first time or revisiting a beloved franchise, our platform helps you find the perfect viewing sequence. Say goodbye to confusion and spoilers - What Order ensures you enjoy every story in the best possible way.</p>
         </section>
       </main>
       <main className="relative w-full  h-screen  justify-evenly z-0">
@@ -62,7 +62,7 @@ const SearchBar = ({handleScroll}) => {
               search
             </button>
         </section>
-        <section onClick={handleScroll} className="flex flex-col ak:hidden akn:flex lg:hidden items-center mt-10 animate-updown">
+        <section onClick={handleScroll} className="flex flex-col lg:hidden items-center mt-10 animate-updown">
           <p className="ZT-Italic text-Oblue text-xl ">click to explore more</p>
           <img className="size-8 rotate-90 mt-1" src={Ok} alt="" />
         </section>
