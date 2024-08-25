@@ -8,7 +8,12 @@ const Navbar = () => {
   return (
     <div className="px-[5%] py-2 fixed w-full h-20 flex z-50 justify-between border-b border-Ogray bg-Owhite">
       <Link to="/">
-        <img className="h-full cursor-pointer safari-only" src={Logo} alt="logo" />
+        <div 
+          className="h-full w-[100px] bg-contain bg-no-repeat bg-center cursor-pointer" 
+          style={{backgroundImage: `url(${Logo})`}}
+          role="img"
+          aria-label="logo"
+        />
       </Link>
       <div className="flex items-center gap-5">
         <Link to="/about">
